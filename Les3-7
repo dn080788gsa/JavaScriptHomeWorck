@@ -1,0 +1,30 @@
+/*
+####Задача 7
+
+Сделайте функцию `getDivisors`, которая параметром принимает число и возвращает массив его делителей 
+(чисел, на которое делится данное число начиная от 1 и заканчивая самим собой). 
+Данная функция должна обязательно содержать проверку входного параметра, потому что принимать она может только число больше 0.
+
+```js
+getDivisors(12); // [1, 2, 3, 4, 6, 12]
+getDivisors('Content'); // Error: parameter type is not a Number
+getDivisors(0); // Error: parameter can't be a 0
+*/
+
+
+function getDivisors(x) {
+  if (typeof x != "number") throw new Error("parameter type is not a Number");
+  if (x < 1) throw new Error("parameter can't be a 0");
+  let resArr = [];
+
+  for (let i=1; i<=x; i++) {
+    if (x % i == 0) resArr.push(i);
+  }
+  
+  return resArr;
+
+}
+
+console.log(getDivisors(12)); // [1, 2, 3, 4, 6, 12]
+console.log(getDivisors('Content')); // Error: parameter type is not a Number
+console.log(getDivisors(0)); // Error: parameter can't be a 0
