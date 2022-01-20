@@ -1,0 +1,18 @@
+####Задача 1
+
+Напишите функцию `f`, которая возвращает куб числа. Число передается параметром. Данная функция должна обязательно содержать проверку входного параметра, потому что принимать она может только число.
+
+```js
+f(2); // 8
+f('Content'); // Error: parameter type is not a Number
+```
+
+----RES---
+
+function f(num) {
+  if (typeof num != "number") throw new Error("parameter type is not a Number"); 
+  return Math.pow(num, 3);
+}
+
+console.log(f(2)); // 8
+console.log(f('Content')); // Error: parameter type is not a Number
