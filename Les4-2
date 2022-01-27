@@ -29,9 +29,7 @@ const arr = [1,2,3];
 console.log(filter(arr, function(item, i, arr) {
   return item > 1;
 }));
-//{ item: 1 }
-//{ item: 2 }
-//{ item: 3 }
+//[ 2, 3 ]
 
 console.log(filter("", function(item, i, arr) {
   return item > 1;
