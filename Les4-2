@@ -1,0 +1,44 @@
+/*
+####Задача 2
+
+Создать имплементацию функции `filter`, логика работы такая же как и у родного метода.
+
+Функция должна содержать проверки:
+
+- Первый параметр обязателен и может принимать только массив
+- Второй параметр обязателен и может принимать только функцию
+
+```javascript
+const arr = [1,2,3];
+filter(arr, function(item, i, arr) {});
+```
+*/
+
+function filter(arr, fn) {
+  if (!Array.isArray(arguments[0])) throw new Error("parameter type should be an array");
+  if (typeof arguments[1] != "function") throw new Error("parameter type should be a function");
+  let filtered = [];
+  for (let i=0; i<arr.length; i++) {
+    if (fn(arr[i], i, arr)) filtered.push(arr[i]);
+  }
+  return filtered;
+}
+
+const arr = [1,2,3];
+
+console.log(filter(arr, function(item, i, arr) {
+  return item > 1;
+}));
+//{ item: 1 }
+//{ item: 2 }
+//{ item: 3 }
+
+console.log(filter("", function(item, i, arr) {
+  return item > 1;
+}));
+//Error: parameter type should be an array
+
+console.log(filter(arr, function(item, i, arr) {
+  return item > 1;
+}));
+//Error: parameter type should be a function
