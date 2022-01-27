@@ -29,7 +29,7 @@ const arr = [1,2,3];
 console.log(some(arr, function(item, i, arr) {
   return item > 1;
 }));
-//false
+//true
 
 console.log(some("", function(item, i, arr) {
   return item > 1;
