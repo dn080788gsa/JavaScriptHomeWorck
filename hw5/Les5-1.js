@@ -1,4 +1,3 @@
 "use strict";
 
-console.log("RUN");
-console.log("RUN");
+console.log("New JS Code");
